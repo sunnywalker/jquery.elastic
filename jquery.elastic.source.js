@@ -60,8 +60,7 @@
 				}),
 				lineHeight	= parseInt($textarea.css('line-height'),10) || parseInt($textarea.css('font-size'),'10'),
 				minheight	= parseInt($textarea.css('height'),10) || lineHeight*3,
-				maxheight	= parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE,
-				goalheight	= 0;
+				maxheight	= parseInt($textarea.css('max-height'),10) || Number.MAX_VALUE;
 
 				// Opera returns max-height of -1 if not set
 				if (maxheight < 0) { maxheight = Number.MAX_VALUE; }
@@ -153,7 +152,7 @@
 				});
 
 				// And this line is to catch the browser paste event
-				$textarea.bind('input paste',function(e){ setTimeout( update, settings.delay); });
+				$textarea.bind('input paste',function(){ setTimeout( update, settings.delay); });
 
 				// Run update once when elastic is initialized
 				update();
